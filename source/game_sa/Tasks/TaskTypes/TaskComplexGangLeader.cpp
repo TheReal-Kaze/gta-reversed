@@ -402,7 +402,7 @@ void CTaskComplexGangLeader::ScanForStuff(CPed* ped) {
             }
 
             // If scanned ped has no group try to add them to this gang
-            if (!scannedPedGrp && m_Gang->GetMembership().CountMembersExcludingLeader() < TOTAL_PED_GROUP_MEMBERS - 1) { // 0x65E4E8
+            if (!scannedPedGrp && m_Gang->GetMembership().CanAddFollower()) { // 0x65E4E8
                 scannedPed.GetEventGroup().Add(
                     CEventScriptCommand{
                         TASK_PRIMARY_PRIMARY,
